@@ -6,14 +6,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Editor from './components/Editor';
+import Preview from './components/Preview';
+import { Provider } from 'react-redux';
+import store from './actions/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1 id="site-header">Markdown Previewer</h1>
+        <Editor />
+        <Preview />
+      </div>
+    </Provider>
   );
 }
 
